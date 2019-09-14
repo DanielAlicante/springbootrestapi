@@ -22,12 +22,22 @@ public class EmployeeDAO {
 	}
 	/* search all employee   */
 	public List<Employee> findAll(){
+		//return employeeRepository.findAll();
 		return employeeRepository.findAll();
 	}
 	
+	/* decir cuantos registros hay*/
+	public long cuantosHay(){
+		return employeeRepository.count();
+	}
+	
+	
+	
+	
 	/* get an employee by Id */
 	public Employee findOne (long id) {
-		return employeeRepository.getOne(id);
+		//return employeeRepository.getOne(id);
+		return employeeRepository.findById(id).orElse(null);
 		
 	}
 	

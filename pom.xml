@@ -12,7 +12,7 @@
   <parent>  <!-- añadido  -->
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.6.RELEASE</version>
+		<version>2.1.8.RELEASE</version>  <!-- tenia 2.1.6 -->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
   
@@ -32,8 +32,17 @@
    		<!--   <version>2.1.6.RELEASE</version> -->	
 </dependency>
 		
-		
-		
+		<dependency> <!-- añadido https://stackoverflow.com/questions/23600044/java-lang-classnotfoundexception-antlr-antlrexception      14/09/2019-->
+    <groupId>antlr</groupId>
+    <artifactId>antlr</artifactId>
+    <!--  <version>2.7.7</version>    -->
+</dependency>
+		<dependency> <!-- añadido https://stackoverflow.com/questions/23600044/java-lang-classnotfoundexception-antlr-antlrexception      14/09/2019-->
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-core</artifactId>
+    <!--  <version>4.3.5.Final</version>     https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->  
+</dependency>
+
 		
 		
 		<dependency>  <!-- añadido -->
@@ -61,7 +70,10 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<dependency> <!--  de mas -->
+		
+		
+		<!--  de mas  -->
+		<dependency> 
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
@@ -74,6 +86,14 @@
 			<scope>test</scope>
 		</dependency>
 		
+		
+		
+		<dependency>  <!-- añadido  https://stackoverflow.com/questions/36697663/circular-view-path-error-spring-boot/44689757       14/09/2019  -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+	
+			
 		
     
     

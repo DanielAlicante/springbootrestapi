@@ -10,14 +10,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.transaction.Transactional;
 import javax.validation.constraints.NotBlank;
 
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.stereotype.Service;
+
+//import lombok.Getter;
+//import lombok.Setter;
 
 @Entity
-@Table (name="Employee")
+@Table (name="employee")
 @EntityListeners(AuditingEntityListener.class)
+//@Getter
+//@Setter
+
+@Service
+@Transactional()
+
 
 
 public class Employee {
@@ -32,13 +43,10 @@ public class Employee {
 	@NotBlank
 	private String designation;
 	
-	@NotBlank
-	private String expertise;
-	
-	//  @NotBlank  lo elimina en minuto 54:10 video
+//  @NotBlank  lo elimina en minuto 54:10 video
 	@Temporal(TemporalType.TIMESTAMP)
 	@LastModifiedDate
-	private Date createAt;
+	private  Date createAt;
 	
 	public Long getId() {
 		return id;
@@ -80,7 +88,9 @@ public class Employee {
 		this.createAt = createAt;
 	}
 
+	@NotBlank
+	private String expertise;
 	
 	
-
+	
 }

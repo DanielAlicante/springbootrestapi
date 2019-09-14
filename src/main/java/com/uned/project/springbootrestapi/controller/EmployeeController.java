@@ -82,4 +82,13 @@ public class EmployeeController {
 	}
 	
 	
+	
+	/* get numero de employee */
+	@GetMapping("/cuantos")
+	public long  getCuantosHay(){
+		
+		return  employeeDAO.cuantosHay() ;
+	}
+	
+	
 }// clase
