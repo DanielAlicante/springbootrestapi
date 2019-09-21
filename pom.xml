@@ -32,11 +32,11 @@
    		<!--   <version>2.1.6.RELEASE</version> -->	
 </dependency>
 		
-		<dependency> <!-- añadido https://stackoverflow.com/questions/23600044/java-lang-classnotfoundexception-antlr-antlrexception      14/09/2019-->
+		<dependency> 
+<!-- 		//añadido https://stackoverflow.com/questions/23600044/java-lang-classnotfoundexception-antlr-antlrexception      14/09/2019 -->
     <groupId>antlr</groupId>
     <artifactId>antlr</artifactId>
-    <!--  <version>2.7.7</version>    -->
-</dependency>
+     </dependency>
 		<dependency> <!-- añadido https://stackoverflow.com/questions/23600044/java-lang-classnotfoundexception-antlr-antlrexception      14/09/2019-->
     <groupId>org.hibernate</groupId>
     <artifactId>hibernate-core</artifactId>

@@ -5,7 +5,9 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.uned.project.springbootrestapi.dao.EmployeeDAO;
@@ -20,6 +23,7 @@ import com.uned.project.springbootrestapi.model.Employee;
 
 @RestController
 @RequestMapping ("/company")
+@CrossOrigin // error de CORS: has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 public class EmployeeController {
 	
 	@Autowired
@@ -33,8 +37,8 @@ public class EmployeeController {
 
 	/* get all employee */
 	@GetMapping ("/employees")
-	public List<Employee> getAllEmployees(){
-		return employeeDAO.findAll();
+	public List<Employee> getAllEmployees() {
+		return employeeDAO.findAll(); 
 	}
 	
 	/* get employee by empid*/

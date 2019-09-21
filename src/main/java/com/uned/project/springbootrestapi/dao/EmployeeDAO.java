@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.uned.project.springbootrestapi.model.Employee;
 import com.uned.project.springbootrestapi.repository.EmployeeRepository;
 
 //Data Access Object es DAO
 @Service
+@Transactional
 public class EmployeeDAO {
 
 	// creamos objeto usamos repository y model

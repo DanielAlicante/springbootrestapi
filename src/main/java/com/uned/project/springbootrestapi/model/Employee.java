@@ -1,38 +1,36 @@
 package com.uned.project.springbootrestapi.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.transaction.Transactional;
 import javax.validation.constraints.NotBlank;
 
 import org.springframework.data.annotation.LastModifiedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-import org.springframework.stereotype.Service;
 
 //import lombok.Getter;
 //import lombok.Setter;
 
 @Entity
 @Table (name="employee")
-@EntityListeners(AuditingEntityListener.class)
+//@EntityListeners(AuditingEntityListener.class)
 //@Getter
 //@Setter
-
-@Service
-@Transactional()
-
-
-
-public class Employee {
+//@Service
+//@Transactional()
+public class Employee implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5191280932150590610L;
+
 	@Id // definimos clave primaria
 	@GeneratedValue(strategy=GenerationType.AUTO)  // que se genere de forma automatica y crezca
 	private Long id;
